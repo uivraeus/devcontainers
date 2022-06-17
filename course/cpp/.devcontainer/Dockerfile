@@ -23,5 +23,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
     check \
     pkg-config
+
+# My addition
+USER vscode
 COPY .bashrc.append /tmp/.bashrc.append
 RUN cat /tmp/.bashrc.append >> ~/.bashrc
