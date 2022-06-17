@@ -30,5 +30,6 @@ RUN wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/d
 USER vscode
 RUN pip3 --disable-pip-version-check --no-cache-dir install TextTest
 RUN pip3 --disable-pip-version-check --no-cache-dir install pytest
+RUN pip3 --disable-pip-version-check --no-cache-dir install pytest-watch
 COPY --chown=1000:1000 bashrc.append /tmp/bashrc.append
 RUN cat /tmp/bashrc.append >> ~/.bashrc
