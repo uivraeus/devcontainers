@@ -18,7 +18,8 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
         jq \
         iputils-ping \
-        python3-pip
+        python3-pip \
+        tree
 
 # special install of yq (my addition)
 RUN wget -qO /usr/local/bin/yq https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 && chmod a+x /usr/local/bin/yq
