@@ -71,5 +71,5 @@
 	//My addition to share/re-use files for different devcontainer definitions
 	//Special tricks here to overcome the ".." build context
 	"initializeCommand": "cp .devcontainer/common-bashrc.append bashrc.append",
-	"onCreateCommand": "cd ${containerWorkspaceFolder} && whoami && pwd && ls -l bashrc.append && rm bashrc.append"
+	"postStartCommand": "rm -f ${containerWorkspaceFolder}/bashrc.append"
 }
