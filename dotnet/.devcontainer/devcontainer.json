@@ -22,7 +22,8 @@
 				"ms-dotnettools.csharp",
 				"streetsidesoftware.code-spell-checker",
 				"donjayamanne.githistory",
-				"eamodio.gitlens"
+				"eamodio.gitlens",
+				"alexcvzz.vscode-sqlite"
 			]
 		}
 	},
