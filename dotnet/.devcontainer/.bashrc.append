@@ -9,3 +9,6 @@ parse_git_branch() {
 }
 export PS1="\n\[\e[33m\]\u \[\e[32m\]\w \[\e[91m\]\$(parse_git_branch)\[\e[00m\]\n$ "
 
+# Based on CLI feedback from running `dotnet tool install`
+export PATH="$PATH:/home/vscode/.dotnet/tools"
+
