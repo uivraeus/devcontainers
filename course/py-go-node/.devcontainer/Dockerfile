@@ -32,5 +32,6 @@ USER vscode
 RUN pip3 --disable-pip-version-check --no-cache-dir install TextTest
 RUN pip3 --disable-pip-version-check --no-cache-dir install pytest
 RUN pip3 --disable-pip-version-check --no-cache-dir install pytest-watch
+RUN pip3 --disable-pip-version-check --no-cache-dir install pytest-cov
 COPY --chown=1000:1000 bashrc.append /tmp/bashrc.append
 RUN cat /tmp/bashrc.append >> ~/.bashrc
