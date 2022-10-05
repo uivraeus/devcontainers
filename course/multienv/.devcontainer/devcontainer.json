@@ -47,7 +47,8 @@
 				"ms-python.vscode-pylance",
 				"golang.Go",
 				"streetsidesoftware.code-spell-checker",
-				"donjayamanne.githistory"
+				"donjayamanne.githistory",
+				"vscjava.vscode-java-pack"
 			]
 		}
 	},
