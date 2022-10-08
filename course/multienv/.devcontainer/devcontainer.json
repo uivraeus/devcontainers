@@ -48,7 +48,8 @@
 				"golang.Go",
 				"streetsidesoftware.code-spell-checker",
 				"donjayamanne.githistory",
-				"vscjava.vscode-java-pack"
+				"vscjava.vscode-java-pack",
+				"ryanluker.vscode-coverage-gutters"
 			]
 		}
 	},
