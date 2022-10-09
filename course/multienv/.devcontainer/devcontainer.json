@@ -89,7 +89,7 @@
 		"docker-in-docker": "20.10",
 		"git": "os-provided",
 		"git-lfs": "latest",
-		"python": "3.10",
+		"python": "os-provided",
 		"golang": "1.19",
 		"java": "17",
 		"maven": "3.8",
