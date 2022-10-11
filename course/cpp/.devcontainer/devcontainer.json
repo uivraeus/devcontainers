@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
 // https://github.com/microsoft/vscode-dev-containers/tree/v0.238.0/containers/cpp
 {
-	"name": "C++",
+	"name": "Craftsmanship Course C/C++",
 	"build": {
 		"dockerfile": "Dockerfile",
 		// Update 'VARIANT' to pick an Debian / Ubuntu OS version: debian-11, debian-10, ubuntu-22.04, ubuntu-20.04, ubuntu-18.04
@@ -19,7 +19,8 @@
 				"ms-vscode.cpptools",
 				"ms-vscode.cmake-tools",
 				"streetsidesoftware.code-spell-checker",
-				"donjayamanne.githistory"
+				"donjayamanne.githistory",
+				"ryanluker.vscode-coverage-gutters"
 			]
 		}
 	},
@@ -33,8 +34,7 @@
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
 	"features": {
-		"git": "os-provided",
-		"git-lfs": "latest"
+		"git": "os-provided"
 	},
 
 	//My addition to share/re-use files for different devcontainer definitions
