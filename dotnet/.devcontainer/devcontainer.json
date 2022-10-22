@@ -29,8 +29,8 @@
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [5000, 5001],
-
+	//"forwardPorts": [5001, 6001],
+	
 	// [Optional] To reuse of your local HTTPS dev cert:
 	//
 	// 1. Export it locally using this command:
@@ -53,6 +53,9 @@
 	//
 	//    * If only using Remote - Containers with a local container, uncomment this line instead:
 		"mounts": [ "source=${env:LOCALHOST_PFX_DIRECTORY},target=/home/vscode/.aspnet/https,type=bind" ],
+
+	// My addition; ensure that the dev-cert is trusted within the container (e.g. for client-app -> server-app testing)
+	"onCreateCommand": "sudo cp /home/vscode/.aspnet/https/localhost.crt /usr/local/share/ca-certificates/ && sudo update-ca-certificates",
 
 	// Use 'postCreateCommand' to run commands after the container is created.
 	"postCreateCommand": "dotnet restore",
