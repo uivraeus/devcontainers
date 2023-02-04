@@ -1,25 +1,16 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
-// https://github.com/microsoft/vscode-dev-containers/tree/v0.234.0/containers/javascript-node
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/javascript-node
 {
 	"name": "Node.js",
-	"build": {
-		"dockerfile": "Dockerfile",
-		// Update 'VARIANT' to pick a Node version: 18, 16, 14.
-		// Append -bullseye or -buster to pin to an OS version.
-		// Use -bullseye variants on local arm64/Apple Silicon.
-		"args": { "VARIANT": "18-bullseye" }
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:0-18",
+	"features": {
+		"ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {},
+		"git": "os-provided"
 	},
 
-	// Set *default* container specific settings.json values on container create.
-	"settings": {},
-
-	// Add the IDs of extensions you want installed when the container is created.
-	"extensions": [
-		"dbaeumer.vscode-eslint",
-		"streetsidesoftware.code-spell-checker",
-		"donjayamanne.githistory",
-		"eamodio.gitlens"
-	],
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
@@ -27,10 +18,23 @@
 	// Use 'postCreateCommand' to run commands after the container is created.
 	// "postCreateCommand": "yarn install",
 
-	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
-	"remoteUser": "node",
-	"features": {
-		"git": "os-provided",
-		"git-lfs": "latest"
-	}
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Add the IDs of extensions you want installed when the container is created.
+			"extensions": [
+				"dbaeumer.vscode-eslint",
+				"streetsidesoftware.code-spell-checker",
+				"donjayamanne.githistory",
+				"ryanluker.vscode-coverage-gutters"
+			]
+		}
+	},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+
+	"initializeCommand": "cp .devcontainer/bashrc.append ./temp-bashrc.append",
+	"postCreateCommand": "cat ${containerWorkspaceFolder}/temp-bashrc.append >> ${HOME:?}/.bashrc && rm ${containerWorkspaceFolder}/temp-bashrc.append"
 }
